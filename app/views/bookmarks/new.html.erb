@@ -1,0 +1,8 @@
+<%= simple_form_for [@list, @bookmark] do |f| %>
+  Cargar peliculas:
+
+<%= f.input :movie_id, collection: Movie.all %>
+<%= f.input :comment %>
+  <%#= f.text_field :name %>
+  <%= f.submit "Crear lista" %>
+<% end %>

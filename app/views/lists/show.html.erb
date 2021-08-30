@@ -1,0 +1,13 @@
+<h1>Lista de película</h1>
+<p><%= @list.name %></p>
+<ul>
+  <% @list.movies.each do |movie| %>
+
+  <li>
+<%= image_tag movie.poster_url, width: 100 %>
+  <%= movie.title %>
+  </li>
+  <% end %>
+</ul>
+<h3><%= link_to "Agregar pelicula", new_list_bookmark_path(@list, @bookmark) %></h3>
+<h3><%= link_to "Ver todas las listas", lists_path %></h3>
