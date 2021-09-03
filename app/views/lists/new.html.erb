@@ -1,2 +1,7 @@
 <h1>Nueva lista</h1>
-<%= render "form", list: @list %>
+  <%= simple_form_for [@list, @bookmark] do |f| %>
+  <%= f.input :movie_id, as: :select, collection: Movie.all.order(:title) %>
+  <%= f.input :coment %>
+  <%= f.submit class:"btn btn_ primary" %>
+<% end %>
+
