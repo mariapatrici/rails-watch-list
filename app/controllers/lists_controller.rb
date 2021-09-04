@@ -1,16 +1,16 @@
 class ListsController < ApplicationController
-  before_action :set_list, only: [:show, :destroy, :new]
+  before_action :set_list, only: [:show, :destroy ]
 
   def index
     @lists = List.all
+    @bookmark = Bookmark.new
   end
 
   def show
-
   end
 
   def new
-    @bookmark = Bookmark.new
+    @list = List.new
   end
 
   def create
